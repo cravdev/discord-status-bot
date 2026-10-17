@@ -1,18 +1,14 @@
-const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 const express = require('express');
-
-// Servidor HTTP simples para manter o Render acordado
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('O bot está rodando perfeitamente!');
+  res.send('Bot está online!');
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor web ouvindo na porta ${PORT}`);
+  console.log(`Servidor HTTP rodando na porta ${PORT}`);
 });
-
 // Configuração do Bot do Discord
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
